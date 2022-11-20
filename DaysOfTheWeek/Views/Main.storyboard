@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aos-ql-u6m">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Day List Table View Controller-->
+        <scene sceneID="9rr-q6-dhG">
+            <objects>
+                <tableViewController id="WLB-9T-AQm" customClass="DayListTableViewController" customModule="DaysOfTheWeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Vry-j7-zip">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayCell" id="iMf-ML-1wI">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iMf-ML-1wI" id="2D6-km-OHD">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ni2-mc-l5v" kind="show" identifier="toDetailVC" id="t13-Ee-i2Y"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WLB-9T-AQm" id="HJ6-Ck-cuZ"/>
+                            <outlet property="delegate" destination="WLB-9T-AQm" id="0cY-C5-ay8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ScM-kF-Sus"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ija-8l-6Hb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070.9923664122136" y="-5.6338028169014089"/>
+        </scene>
+        <!--Day Detail View Controller-->
+        <scene sceneID="OAq-O3-mQB">
+            <objects>
+                <viewController id="Ni2-mc-l5v" customClass="DayDetailViewController" customModule="DaysOfTheWeek" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SeD-FL-fzD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEO-5A-GEY">
+                                <rect key="frame" x="16" y="119" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(origin)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLE-ZU-1fy">
+                                <rect key="frame" x="16" y="156" width="361" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZOE-4H-g82"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qEO-5A-GEY" firstAttribute="top" secondItem="ZOE-4H-g82" secondAttribute="top" constant="16" id="BWb-SP-jQl"/>
+                            <constraint firstItem="qEO-5A-GEY" firstAttribute="leading" secondItem="ZOE-4H-g82" secondAttribute="leading" constant="16" id="Dzu-hc-KA6"/>
+                            <constraint firstItem="fLE-ZU-1fy" firstAttribute="top" secondItem="qEO-5A-GEY" secondAttribute="bottom" constant="16" id="Ib2-EY-9NL"/>
+                            <constraint firstItem="ZOE-4H-g82" firstAttribute="trailing" secondItem="qEO-5A-GEY" secondAttribute="trailing" constant="16" id="YxL-2r-Thf"/>
+                            <constraint firstItem="fLE-ZU-1fy" firstAttribute="leading" secondItem="ZOE-4H-g82" secondAttribute="leading" constant="16" id="bea-SR-oRb"/>
+                            <constraint firstItem="ZOE-4H-g82" firstAttribute="trailing" secondItem="fLE-ZU-1fy" secondAttribute="trailing" constant="16" id="vEc-t1-6vR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xAX-UO-4VP"/>
+                    <connections>
+                        <outlet property="dayNameLabel" destination="qEO-5A-GEY" id="iQl-H8-FZa"/>
+                        <outlet property="dayOriginLabel" destination="fLE-ZU-1fy" id="tJB-Zt-ghF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lHZ-4Y-1Qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843.5114503816794" y="-6.3380281690140849"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uYK-lK-fiP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Aos-ql-u6m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpV-WU-tWQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WLB-9T-AQm" kind="relationship" relationship="rootViewController" id="Fah-0W-jEy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0J0-Yw-elJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.27480916030532" y="-5.6338028169014089"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
